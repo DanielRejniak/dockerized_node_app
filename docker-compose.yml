@@ -1,0 +1,15 @@
+version: '2' # specify docker-compose version
+
+services:
+
+  back-end:
+    build: backend
+    ports:
+      - "3000:3000"
+    links:
+      - database
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
