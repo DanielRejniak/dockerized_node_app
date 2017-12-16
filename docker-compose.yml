@@ -9,6 +9,11 @@ services:
     links:
       - database
 
+  front-end:
+    build: frontend
+    ports:
+      - "8000:8000"
+
   database:
     image: mongo:latest
     ports:

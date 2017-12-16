@@ -5,18 +5,6 @@ const http = require('http');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-// MongoDB URL from the docker-compose file
-const dbHost = 'mongodb://database/node-app';
-
-// Connect to mongodb
-mongoose.connect(dbHost, function(err) {
-  if(err) {
-    console.log('Database Not Connected!');
-  } else {
-    console.log('Database Connected');
-  }
-});
-
 // Get our API routes
 const api = require('./routes/api');
 const app = express();
@@ -24,6 +12,13 @@ const app = express();
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Cross Origin middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
 
 // Set our api routes
 app.use('/', api);
