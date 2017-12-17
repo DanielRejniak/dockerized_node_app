@@ -9,6 +9,7 @@ import About from './components/About'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import CustomerDetails from './components/CustomerDetails'
+import Contact from './components/Contact'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -22,6 +23,7 @@ const router = new VueRouter({
     {path: '/add', component: Add},
     {path: '/customer/:id', component: CustomerDetails},
     {path: '/edit/:id', component: Edit},
+    {path: '/contact', component: Contact}
   ]
 })
 
@@ -30,28 +32,28 @@ new Vue({
   router,
   template: `
     <div id="app">
-      <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">vCustomers</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><router-link to="/add">Add Customer</router-link></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add">Add</a>
+      </li>
+    </ul>
+  </div>
+</nav>
       <router-view></router-view>
     </div>
   `

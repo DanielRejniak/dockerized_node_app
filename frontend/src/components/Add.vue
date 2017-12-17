@@ -4,41 +4,37 @@
     <h1 class="page-header">Add Customer</h1>
     <form v-on:submit="addCustomer">
         <div class="well">
-            <h4>Customer Info</h4>
+            <h4>Event Info</h4>
             <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control" placeholder="First Name" v-model="customer.first_name">
+                <label>Event Name</label>
+                <input type="text" class="form-control" placeholder="First Name" v-model="customer.event_name">
             </div>
             <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" v-model="customer.last_name">
+                <label>Event Location</label>
+                <input type="text" class="form-control" placeholder="Last Name" v-model="customer.event_location">
             </div>
         </div>
         <div class="well">
-            <h4>Customer Contact</h4>
+            <h4>Event Affiliation/Discipline</h4>
             <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" placeholder="Email" v-model="customer.email">
+                <label>Event Discipline</label>
+                <input type="text" class="form-control" placeholder="Email" v-model="customer.event_discipline">
             </div>
             <div class="form-group">
-                <label>Phone</label>
-                <input type="text" class="form-control" placeholder="Phone" v-model="customer.phone">
+                <label>Event Affiliation</label>
+                <input type="text" class="form-control" placeholder="Phone" v-model="customer.event_affiliation">
             </div>
         </div>
 
         <div class="well">
-            <h4>Customer Location</h4>
+            <h4>Event Date/Time</h4>
             <div class="form-group">
-                <label>Address</label>
-                <input type="text" class="form-control" placeholder="Address" v-model="customer.address">
+                <label>Event Date</label>
+                <input type="text" class="form-control" placeholder="Address" v-model="customer.event_date">
             </div>
             <div class="form-group">
-                <label>City</label>
-                <input type="text" class="form-control" placeholder="City" v-model="customer.city">
-            </div>
-            <div class="form-group">
-                <label>State</label>
-                <input type="text" class="form-control" placeholder="State" v-model="customer.state">
+                <label>Event Time</label>
+                <input type="text" class="form-control" placeholder="City" v-model="customer.event_time">
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,17 +54,16 @@
     },
     methods: {
         addCustomer(e){
-            if(!this.customer.first_name || !this.customer.last_name){
+            if(!this.customer.event_name || !this.customer.event_location){
                 this.alert = 'Please fill in all required fields';
             } else {
                 let newCustomer = {
-                    first_name: this.customer.first_name,
-                    last_name: this.customer.last_name,
-                    phone: this.customer.phone,
-                    email: this.customer.email,
-                    address: this.customer.address,
-                    city: this.customer.city,
-                    state: this.customer.state
+                    event_name: this.customer.event_name,
+                    event_location: this.customer.event_location,
+                    event_discipline: this.customer.event_discipline,
+                    event_affiliation: this.customer.event_affiliation,
+                    event_date: this.customer.event_date,
+                    event_time: this.customer.event_time
                 }
 
                 this.$http.post('http://localhost:3000/api/costumer/add', newCustomer)

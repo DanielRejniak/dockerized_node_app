@@ -1,24 +1,28 @@
 <template>
   <div class="customers container">
+    <br>
     <Alert v-if="alert" v-bind:message="alert" />
-    <h1 class="page-header">Manage Customers</h1>
     <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
     <br />
-    <table class="table table-striped">
+    <table class="table">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
+            <th>Location</th>
+            <th>Discipline</th>
+            <th>Affiliation</th>
+            <th>Date</th>
+            <th>Time</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="customer in filterBy(customers, filterInput)">
-            <td>{{customer.first_name}}</td>
-            <td>{{customer.last_name}}</td>
-            <td>{{customer.email}}</td>
-            <td><router-link class="btn btn-default" v-bind:to="'/customer/'+customer._id">View</router-link></td>
+            <td>{{customer.event_location}}</td>
+            <td>{{customer.event_discipline}}</td>
+            <td>{{customer.event_affiliation}}</td>
+            <td>{{customer.event_date}}</td>
+            <td>{{customer.event_time}}</td>
+            <td><router-link class="btn primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
           </tr>
         </tbody>
     </table>
@@ -47,7 +51,7 @@
       filterBy(list, value){
         value = value.charAt(0).toUpperCase() + value.slice(1);
         return list.filter(function(customer){
-          return customer.last_name.indexOf(value) > -1;
+          return customer.event_location.indexOf(value) > -1;
         });
       }
     },

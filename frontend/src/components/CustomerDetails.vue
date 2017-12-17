@@ -1,15 +1,19 @@
 <template>
   <div class="details container">
     <router-link to="/">Back</router-link>
-    <h1 class="page-header">{{customer.first_name}} {{customer.last_name}}
+    <h1 class="page-header">{{customer.event_name}}
         <span class="pull-right">
             <router-link class="btn btn-primary" v-bind:to="'/edit/'+customer._id">Edit</router-link>
             <button class="btn btn-danger" v-on:click="deleteCustomer(customer._id)">Delete</button>
             </span>
     </h1>
     <ul class="list-group">
-            <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.email}}</li>
-        </ul>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_location}}</li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_discipline}}</li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_affiliation}}</li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_date}}</li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_time}}</li>
+    </ul>
   </div>
 </template>
 
