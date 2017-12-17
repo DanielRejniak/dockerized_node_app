@@ -10,6 +10,7 @@ import Add from './components/Add'
 import Edit from './components/Edit'
 import CustomerDetails from './components/CustomerDetails'
 import Contact from './components/Contact'
+import Homepage from './components/Homepage'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -23,7 +24,8 @@ const router = new VueRouter({
     {path: '/add', component: Add},
     {path: '/customer/:id', component: CustomerDetails},
     {path: '/edit/:id', component: Edit},
-    {path: '/contact', component: Contact}
+    {path: '/contact', component: Contact},
+    {path: '/homepage', component: Homepage}
   ]
 })
 
@@ -40,7 +42,10 @@ new Vue({
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/homepage">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/about">About</a>
