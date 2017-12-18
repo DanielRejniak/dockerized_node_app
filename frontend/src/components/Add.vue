@@ -1,43 +1,37 @@
 <template>
   <div class="add container">
     <Alert v-if="alert" v-bind:message="alert" />
-    <h1 class="page-header">Add Customer</h1>
+    <h1 class="page-header">Add Event</h1>
     <form v-on:submit="addCustomer">
         <div class="well">
             <h4>Event Info</h4>
             <div class="form-group">
-                <label>Event Name</label>
-                <input type="text" class="form-control" placeholder="First Name" v-model="customer.event_name">
+                <input type="text" class="form-control" placeholder="Event Name" v-model="customer.event_name">
             </div>
             <div class="form-group">
-                <label>Event Location</label>
-                <input type="text" class="form-control" placeholder="Last Name" v-model="customer.event_location">
+                <input type="text" class="form-control" placeholder="Event Location" v-model="customer.event_location">
             </div>
         </div>
         <div class="well">
             <h4>Event Affiliation/Discipline</h4>
             <div class="form-group">
-                <label>Event Discipline</label>
-                <input type="text" class="form-control" placeholder="Email" v-model="customer.event_discipline">
+                <input type="text" class="form-control" placeholder="Event Discipline" v-model="customer.event_discipline">
             </div>
             <div class="form-group">
-                <label>Event Affiliation</label>
-                <input type="text" class="form-control" placeholder="Phone" v-model="customer.event_affiliation">
+                <input type="text" class="form-control" placeholder="Event Affiliation" v-model="customer.event_affiliation">
             </div>
         </div>
 
         <div class="well">
             <h4>Event Date/Time</h4>
             <div class="form-group">
-                <label>Event Date</label>
-                <input type="text" class="form-control" placeholder="Address" v-model="customer.event_date">
+                <input type="text" class="form-control" placeholder="Event Date" v-model="customer.event_date">
             </div>
             <div class="form-group">
-                <label>Event Time</label>
-                <input type="text" class="form-control" placeholder="City" v-model="customer.event_time">
+                <input type="text" class="form-control" placeholder="Event Time" v-model="customer.event_time">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit Event</button>
     </form>
   </div>
 </template>
