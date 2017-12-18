@@ -13,6 +13,7 @@
       <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_affiliation}}</li>
       <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_date}}</li>
       <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{customer.event_time}}</li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Event Has Been Approved By Administrators : {{customer.event_approved}}</li>
     </ul>
   </div>
 </template>

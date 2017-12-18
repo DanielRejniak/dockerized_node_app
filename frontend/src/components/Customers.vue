@@ -12,6 +12,7 @@
             <th>Affiliation</th>
             <th>Date</th>
             <th>Time</th>
+            <th>Status</th>
             <th></th>
           </tr>
         </thead>
@@ -22,6 +23,7 @@
             <td>{{customer.event_affiliation}}</td>
             <td>{{customer.event_date}}</td>
             <td>{{customer.event_time}}</td>
+            <td>{{customer.event_approved}}</td>
             <td><router-link class="btn primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
           </tr>
         </tbody>

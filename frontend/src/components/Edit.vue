@@ -30,6 +30,9 @@
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Event Time" v-model="customer.event_time">
             </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Event Approval" v-model="customer.event_approved">
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Update Event</button>
     </form>
@@ -63,7 +66,8 @@
                     event_discipline: this.customer.event_discipline,
                     event_affiliation: this.customer.event_affiliation,
                     event_date: this.customer.event_date,
-                    event_time: this.customer.event_time
+                    event_time: this.customer.event_time,
+                    event_approved: this.customer.event_approved
                 }
 
                 this.$http.post('http://localhost:3000/api/costumer/update/'+this.$route.params.id, updCustomer)
