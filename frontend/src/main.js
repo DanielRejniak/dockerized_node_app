@@ -11,6 +11,7 @@ import Edit from './components/Edit'
 import CustomerDetails from './components/CustomerDetails'
 import Contact from './components/Contact'
 import Homepage from './components/Homepage'
+import EventDetailsPublic from './components/EventDetailsPublic'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -25,7 +26,8 @@ const router = new VueRouter({
     {path: '/customer/:id', component: CustomerDetails},
     {path: '/edit/:id', component: Edit},
     {path: '/contact', component: Contact},
-    {path: '/homepage', component: Homepage}
+    {path: '/homepage', component: Homepage},
+    {path: '/events', component: EventDetailsPublic}
   ]
 })
 

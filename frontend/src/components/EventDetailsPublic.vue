@@ -24,7 +24,7 @@
             <td>{{customer.event_date}}</td>
             <td>{{customer.event_time}}</td>
             <td>{{customer.event_approved}}</td>
-            <td><router-link class="btn btn-primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
+            <td><router-link class="btn primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
           </tr>
         </tbody>
     </table>
