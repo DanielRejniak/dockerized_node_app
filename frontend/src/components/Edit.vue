@@ -31,7 +31,11 @@
                 <input type="text" class="form-control" placeholder="Event Time" v-model="customer.event_time">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Event Approval" v-model="customer.event_approved">
+              <select v-model="customer.event_approved">
+                <option>Pending</option>
+                <option>Approved</option>
+                <option>Not Approved</option>
+              </select>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Update Event</button>
@@ -46,8 +50,8 @@
     data () {
         return {
         customer: {},
-        alert:''
-        }
+        alert:'',
+      }
     },
     methods: {
         fetchCustomer(id){
