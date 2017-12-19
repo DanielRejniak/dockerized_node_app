@@ -12,19 +12,17 @@
             <th>Affiliation</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Status</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="customer in filterBy(customers, filterInput)">
-            <td>{{customer.event_location}}</td>
-            <td>{{customer.event_discipline}}</td>
-            <td>{{customer.event_affiliation}}</td>
-            <td>{{customer.event_date}}</td>
-            <td>{{customer.event_time}}</td>
-            <td>{{customer.event_approved}}</td>
-            <td><router-link class="btn primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
+            <td v-if="customer.event_approved == 'Approved'">{{customer.event_location}}</td>
+            <td v-if="customer.event_approved == 'Approved'">{{customer.event_discipline}}</td>
+            <td v-if="customer.event_approved == 'Approved'">{{customer.event_affiliation}}</td>
+            <td v-if="customer.event_approved == 'Approved'">{{customer.event_date}}</td>
+            <td v-if="customer.event_approved == 'Approved'">{{customer.event_time}}</td>
+            <td v-if="customer.event_approved == 'Approved'"><router-link class="btn primary" v-bind:to="'/customer/'+customer._id">More Info</router-link></td>
           </tr>
         </tbody>
     </table>
