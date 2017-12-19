@@ -4,7 +4,7 @@
       <div class="masthead-content">
         <div class="container">
           <h2 class="masthead-subheading mb-0">All Horse Events In One Place</h2>
-          <a href="/" class="btn btn-primary btn-xl rounded-pill mt-5">See Events</a>
+          <a href="/events" class="btn btn-primary btn-xl rounded-pill mt-5">See Events</a>
         </div>
       </div>
       <div class="bg-circle-1 bg-circle"></div>
