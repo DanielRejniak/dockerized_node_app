@@ -2,8 +2,10 @@
   <div class="customers container">
     <br>
     <Alert v-if="alert" v-bind:message="alert" />
-    <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
-    <br />
+    <input class="form-control" placeholder="County" v-model="filterInput">
+    <input class="form-control" placeholder="Discipline" v-model="filterInput1">
+    <input class="form-control" placeholder="Affiliation" v-model="filterInput2">
+    <br/>
     <table class="table">
         <thead>
           <tr>
@@ -17,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="customer in filterBy(customers, filterInput)">
+          <tr v-for="customer in filterBy(customers,filterInput,filterInput1,filterInput2)">
             <td>{{customer.event_location}}</td>
             <td>{{customer.event_discipline}}</td>
             <td>{{customer.event_affiliation}}</td>
@@ -39,7 +41,9 @@
       return {
         customers: [],
         alert:'',
-        filterInput:''
+        filterInput:'',
+        filterInput1:'',
+        filterInput2:''
       }
     },
     methods: {
@@ -50,10 +54,11 @@
             console.log(response);
           });
       },
-      filterBy(list, value){
-        value = value.charAt(0).toUpperCase() + value.slice(1);
+      filterBy(list, value, value1, value2){
         return list.filter(function(customer){
-          return customer.event_location.indexOf(value) > -1;
+          return customer.event_location.indexOf(value) > -1 &&
+            customer.event_discipline.indexOf(value1) > -1 &&
+            customer.event_affiliation.indexOf(value2) > -1;
         });
       }
     },

@@ -9,7 +9,40 @@
                 <input type="text" class="form-control" placeholder="Event Name" v-model="customer.event_name">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Event Location" v-model="customer.event_location">
+              <select v-model="customer.event_location">
+                <option>Antrim</option>
+                <option>Armagh</option>
+                <option>Carlow</option>
+                <option>Cavan</option>
+                <option>Clare</option>
+                <option>Cork</option>
+                <option>Derry</option>
+                <option>Donegal</option>
+                <option>Down</option>
+                <option>Dublin</option>
+                <option>Fermanagh</option>
+                <option>Galway</option>
+                <option>Kerry</option>
+                <option>Kildare</option>
+                <option>Kilkenny</option>
+                <option>Laois</option>
+                <option>Leitrim</option>
+                <option>Limerick</option>
+                <option>Longford</option>
+                <option>Louth</option>
+                <option>Mayo</option>
+                <option>Meath</option>
+                <option>Monaghan</option>
+                <option>Offaly</option>
+                <option>Roscommon</option>
+                <option>Sligo</option>
+                <option>Tipperary</option>
+                <option>Tyrone</option>
+                <option>Waterford</option>
+                <option>Westmeath</option>
+                <option>Wexford</option>
+                <option>Wicklow</option>
+              </select>
             </div>
         </div>
         <div class="well">
