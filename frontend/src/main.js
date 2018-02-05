@@ -12,6 +12,8 @@ import CustomerDetails from './components/CustomerDetails'
 import Contact from './components/Contact'
 import Homepage from './components/Homepage'
 import EventDetailsPublic from './components/EventDetailsPublic'
+import Login from './components/Login'
+import Register from './components/Register'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -27,7 +29,9 @@ const router = new VueRouter({
     {path: '/edit/:id', component: Edit},
     {path: '/contact', component: Contact},
     {path: '/homepage', component: Homepage},
-    {path: '/events', component: EventDetailsPublic}
+    {path: '/events', component: EventDetailsPublic},
+    {path: '/login', component: Login},
+    {path: '/register', component: Register}
   ]
 })
 
@@ -57,6 +61,14 @@ new Vue({
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/add">Add</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/register">Register</a>
+    </li>
+    <li class="navbar-item">
+      <a class="nav-link" href="/login">Login</a>
     </li>
   </ul>
 </div>
